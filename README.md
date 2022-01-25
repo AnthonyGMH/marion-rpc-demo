@@ -22,3 +22,9 @@
         <fastjson.version>1.2.76</fastjson.version>
     </properties>
 ```
+## rpc-proto
+- Peer：定义网络传输 地址 & 端口
+- ServiceDescriptor：服务的描述，服务即一个对外的方法
+- RPC框架中请求与响应之间规定的协议
+  - Request：客户端请求ServiceDescriptor，parameters
+  - Response：服务器响应code，message，data

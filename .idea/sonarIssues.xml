@@ -18,7 +18,37 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/rpc-proto/src/main/java/com/marion/mrpc/Peer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-proto/src/main/java/com/marion/mrpc/Request.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-proto/src/main/java/com/marion/mrpc/Response.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-proto/src/main/java/com/marion/mrpc/ServiceDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/rpc-proto/src/main/java/com/marion/mrpc/Response.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/rpc-proto/src/main/java/com/marion/mrpc/ServiceDescriptor.java">
           <value>
             <set />
           </value>
