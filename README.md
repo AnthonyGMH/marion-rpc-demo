@@ -23,8 +23,14 @@
     </properties>
 ```
 ## rpc-proto
-- Peer：定义网络传输 地址 & 端口
-- ServiceDescriptor：服务的描述，服务即一个对外的方法
-- RPC框架中请求与响应之间规定的协议
-  - Request：客户端请求ServiceDescriptor，parameters
-  - Response：服务器响应code，message，data
+    - Peer：定义网络传输 地址 & 端口
+    - ServiceDescriptor：服务的描述，服务即一个对外的方法
+    - RPC框架中请求与响应之间规定的协议
+      - Request：客户端请求ServiceDescriptor，parameters
+      - Response：服务器响应code，message，data
+## rpc-common
+    - ReflectUtils：反射工具类。
+* @method newInstance 根据clazz创建对象
+* @method getPublicMethods 获取clazz类所有public方法
+* @method invoke 调用指定对象的指定方法，返回调用结果
+Junit生成测试类。
