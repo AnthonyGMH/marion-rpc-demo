@@ -18,6 +18,56 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/src/main/java/com/marion/mrpc/codec/DecodeExpception.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/src/main/java/com/marion/mrpc/codec/Decoder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/src/main/java/com/marion/mrpc/codec/EncodeExpception.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/src/main/java/com/marion/mrpc/codec/Encoder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/src/main/java/com/marion/mrpc/codec/JSONDecoder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/src/main/java/com/marion/mrpc/codec/JSONEncoder.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/src/test/java/com/marion/mrpc/codec/JSONDecoderTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/src/test/java/com/marion/mrpc/codec/JSONEncoderTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-codec/src/test/java/com/marion/mrpc/codec/TestBean.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/rpc-common/src/main/java/com/marion/common/untils/ReflectUtils.java">
           <value>
             <set />
@@ -64,6 +114,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/rpc-codec/src/main/java/com/marion/mrpc/codec/Decoder.java">
           <value>
             <set />
           </value>
