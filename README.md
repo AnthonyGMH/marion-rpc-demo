@@ -32,7 +32,7 @@
 - ReflectUtils：反射工具类
   * @method newInstance 根据clazz创建对象
   * @method getPublicMethods 获取clazz类所有public方法
-  * @method invoke 调用指定对象的指定方法，返回调用结果
+  * @method invoke 调用指定对象的指定方法，返回调用结果Object
 - Junit生成测试类
 ## rpc-codec
 - Encoder & Decoder：【接口】序列化 & 反序列化

@@ -50,11 +50,11 @@ public class ReflectUtils {
     }
 
     /**
-     * 调用指定对象的指定方法，返回调用结果
+     * 调用指定对象的指定方法，返回调用结果Object
      * @param obj 指定对象
      * @param method 指定方法
      * @param args 传入的可变参数
-     * @return 返回调用结果
+     * @return 返回调用结果Object
      */
     public static Object invoke(Object obj, Method method, Object... args) {
 

@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/README.md">
           <value>
             <set />
@@ -113,6 +118,51 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/rpc-server/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-server/src/main/java/com/marion/mrpc/server/RpcServer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-server/src/main/java/com/marion/mrpc/server/RpcServerConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-server/src/main/java/com/marion/mrpc/server/ServiceInstance.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-server/src/main/java/com/marion/mrpc/server/ServiceInvoker.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-server/src/main/java/com/marion/mrpc/server/ServiceManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-server/src/test/java/com/marion/mrpc/server/ServiceManagerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-server/src/test/java/com/marion/mrpc/server/TestClass.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-server/src/test/java/com/marion/mrpc/server/TestInterface.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/rpc-transport/pom.xml">
           <value>
             <set />
@@ -169,6 +219,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/rpc-proto/src/main/java/com/marion/mrpc/ServiceDescriptor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/rpc-server/src/main/java/com/marion/mrpc/server/ServiceManager.java">
           <value>
             <set />
           </value>

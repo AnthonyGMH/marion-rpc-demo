@@ -1,0 +1,11 @@
+
+Q
+java:S1117 ";Rename "handler" which hides the field declared at line 24.(”î¯þ
+t
+java:S2142+"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ý¾
+p
+java:S1989>"UHandle the following exception that could be thrown by "getInputStream": IOException.(“‹èìþÿÿÿÿ
+q
+java:S1989@"VHandle the following exception that could be thrown by "getOutputStream": IOException.(™ë÷¨üÿÿÿÿ
+b
+java:S1989D"LHandle the following exception that could be thrown by "flush": IOException.(‚çÿþ

@@ -49,8 +49,20 @@ public class ServiceDescriptor {
         return descriptor;
     }
 
-
-    @Override public boolean equals(Object obj) {
+    /**
+     * 为什么要重写equals方法呢?
+     * 我们的RPC框架最终是通过ServiceManager类来管理RPC对外暴露的服务。
+     * 而在ServiceManager类当中我们自定义了一个services属性。其实是通过这个属性进行服务管理
+     * services属性的数据结构是【Map<ServiceDescriptor, ServiceInstance>】
+     * 意思是在services属性中，Map的key是自定义的，key:ServiceDescriptor
+     * 管理服务的操作 = 对services属性操作 = 对Map进行操作
+     * 而当我们需要用Map.get方法的时候，其实是用到key：ServiceDescriptor的equals方法。
+     * 因此我们当然有必要重写这个equals方法，进而重写hashCode和toString。【规定一起重写】
+     * @param obj
+     * @return
+     */
+    @Override
+    public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
