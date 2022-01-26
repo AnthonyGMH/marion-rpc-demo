@@ -74,17 +74,17 @@ public class RpcServer {
         @Override
         public void onRequest(InputStream receive, OutputStream toResponse) {
             try {
-                // 读所有可用的二进制数据
+                // 1. 读所有可用的二进制数据
                 byte[] bytes = IOUtils.readFully(receive, receive.available());
-                // 反序列化得到request类的对象
+                // 2. 反序列化得到request类的对象
                 Request request = decoder.decode(bytes, Request.class);
                 log.info("get request, {}", request);
-                // 通过request类的对象, 还原具体的服务请求, 找到服务ServiceInstance
+                // 3. 通过request类的对象, 还原具体的服务请求, 找到服务ServiceInstance
                 ServiceInstance serviceInstance = serviceManager.lookup(request);
                 log.info("get service, {}", serviceInstance);
-                // 通过ServiceInstance可以来调用具体的方法, 得到结果invoke【Object类-代表所有可能的数据】
+                // 4. 通过ServiceInstance可以来调用具体的方法, 得到结果invoke【Object类-代表所有可能的数据】
                 Object invoke = serviceInvoker.invoke(serviceInstance, request);
-                // 将结果invoke写入响应response中去, 并发送回去【还不是二进制数据】
+                // 5. 将结果invoke写入响应response中去, 并发送回去【还不是二进制数据】
                 response.setData(invoke);
 
             } catch (Exception e) {
@@ -94,12 +94,12 @@ public class RpcServer {
                 response.setCode(1);
                 response.setMessage("RpcServer get error: " + e.getClass().getName());
             } finally {
-                // 【响应返回的】二进制数组
+                // 6. 【响应返回的】二进制数组
                 byte[] byteResponse = new byte[0];
                 try {
-                    // 将response序列化成二进制数据
+                    // 7. 将response序列化成二进制数据
                     byteResponse = encoder.encode(response);
-                    // 往响应返回流中写入二进制数据
+                    // 8. 往响应返回流中写入二进制数据
                     toResponse.write(byteResponse);
                     log.info("RpcServer response");
                 } catch (Exception e) {

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rpc-client</artifactId>
+    <artifactId>rpc-example</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,31 +19,22 @@
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>rpc-proto</artifactId>
+            <artifactId>rpc-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>rpc-codec</artifactId>
+            <artifactId>rpc-server</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>rpc-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>rpc-transport</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>rpc-proto</artifactId>
+            <artifactId>rpc-client</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

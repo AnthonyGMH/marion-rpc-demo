@@ -23,6 +23,36 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/rpc-client/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-client/src/main/java/com/marion/mrpc/client/RandomTransportSelector.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-client/src/main/java/com/marion/mrpc/client/RemoteInvoker.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-client/src/main/java/com/marion/mrpc/client/RpcClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-client/src/main/java/com/marion/mrpc/client/RpcClientConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-client/src/main/java/com/marion/mrpc/client/TransportSelector.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/rpc-codec/pom.xml">
           <value>
             <set />
@@ -94,6 +124,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/rpc-common/src/test/java/com/marion/common/utils/TestClass.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-example/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-example/src/main/java/com/marion/mrpc/example/Server.java">
           <value>
             <set />
           </value>
@@ -199,6 +239,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/rpc-client/src/main/java/com/marion/mrpc/client/RandomTransportSelector.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/rpc-client/src/main/java/com/marion/mrpc/client/RemoteInvoker.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/rpc-client/src/main/java/com/marion/mrpc/client/RpcClientConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/rpc-client/src/main/java/com/marion/mrpc/client/TransportSelector.java">
           <value>
             <set />
           </value>
