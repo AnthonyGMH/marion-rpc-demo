@@ -113,6 +113,41 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/rpc-transport/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-transport/src/main/java/com/marion/mrpc/transport/HttpTransportClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-transport/src/main/java/com/marion/mrpc/transport/HttpTransportServer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-transport/src/main/java/com/marion/mrpc/transport/RequestHandler.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-transport/src/main/java/com/marion/mrpc/transport/RequestServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-transport/src/main/java/com/marion/mrpc/transport/TransportClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/rpc-transport/src/main/java/com/marion/mrpc/transport/TransportServer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../../RPC/03RPC/marion-rpc-demo/README.md">
           <value>
             <set />

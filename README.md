@@ -38,3 +38,10 @@
 - Encoder & Decoder：【接口】序列化 & 反序列化
 - JSONEncoder & JSONDecoder：基于JSON的实现
 - Junit生成测试类
+## rpc-transport
+- TransportClient & TransportServer：【接口】传输客户端 & 传输客户端
+- RequestHandler：处理请求的handler，输入数据的通道 & 输出数据的通道
+- HttpTransportClient：基于HTTP的客户端
+  - 1.创建连接 2.发送请求（获取响应） 3.关闭连接
+- HttpTransportServer：基于HTTP的服务端
+  - 1.启动并监听端口 2.响应接受请求（进行处理并返回） 3.关闭
