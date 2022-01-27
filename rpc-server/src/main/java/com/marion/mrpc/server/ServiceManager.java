@@ -10,7 +10,11 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 管理RPC暴露的服务
+ * 统一管理RPC对外提供的服务
+ *      1. register: 根据[Class类]和[该类的具体对象bean], 通过[反射工具类ReflectUtils]得到所有public方法, 并进行服务注册.
+ *      2. lookup: 根据[协议约定的请求request]返回对应的[服务实例ServiceInstance]
+ *      services属性: 已注册的服务列表.
+ *      services属性数据结构: Map<ServiceDescriptor, ServiceInstance>
  */
 @Slf4j
 public class ServiceManager {
@@ -21,6 +25,7 @@ public class ServiceManager {
      */
     private Map<ServiceDescriptor, ServiceInstance> services;
     /**
+     * 无参构造方法
      * 通过services属性【数据结构：Map】管理服务
      */
     public ServiceManager() {
@@ -28,6 +33,7 @@ public class ServiceManager {
     }
 
     /**
+     * 根据[Class类]和[该类的具体对象bean], 通过反射工具类ReflectUtils得到所有public方法,并进行服务注册.
      * 1. 传入一个Class-interfaceClass和Object-bean，扫描出该Class的所有public方法
      * 2. 针对所有的public方法，结合Class，得到ServiceDescriptor
      * 3. 针对所有的public方法，结合Object，得到ServiceInstance
@@ -51,7 +57,7 @@ public class ServiceManager {
     }
 
     /**
-     *
+     * 根据[协议约定的请求request]返回对应的[服务实例ServiceInstance]
      * @param request RPC框架中请求与响应之间规定的协议。客户端请求ServiceDescriptor，parameters
      * @return 最终从services属性中【Map<ServiceDescriptor, ServiceInstance>】找到该ServiceDescriptor对应的ServiceInstance
      */

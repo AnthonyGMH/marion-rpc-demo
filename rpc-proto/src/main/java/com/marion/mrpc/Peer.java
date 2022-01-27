@@ -5,7 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 定义网络传输 地址 & 端口
+ * 定义网络通信 地址 & 端口
+ * 作用：定位网络通信的对端
  */
 @Data
 @NoArgsConstructor

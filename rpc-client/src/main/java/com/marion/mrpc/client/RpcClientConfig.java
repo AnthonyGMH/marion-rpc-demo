@@ -13,18 +13,16 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * RPC客户端配置类
+ * RPC Client的配置
+ *    1. TransportClient: 选择网络通信模块，具体采用什么样的连接
+ *    2. Encoder & Decoder: 选择编码解码序列化模块，序列化采用什么格式
+ *    3. TransportSelector：选择路由的策略，默认随机策略
+ *    4. connectCount连接数: 每个RpcClient与所有RpcServer之间, 默认建立多少连接
+ *    5. RpcServers: 初始化默认有的服务器 ip & 端口
  */
 @Data
 public class RpcClientConfig {
 
-    /**
-     *    1. 定义TransportClient: 选择网络通信模块，采用什么样的协议？
-     *    2. 定义Encoder & Decoder: 选择编码解码序列化模块，序列化采用什么格式？
-     *    3. 定义TransportSelector：选择路由的策略，默认随机策略。
-     *    4. 连接数: 每个peer与server之间, 默认建立多少连接
-     *    5. 服务servers: 初始化默认有的服务器 ip & 端口
-     */
 
     private Class<? extends TransportClient> transportClass = HttpTransportClient.class;
 
@@ -36,6 +34,6 @@ public class RpcClientConfig {
 
     // 默认建立一个连接
     private int connectCount = 1;
-    // 可以连哪些网络端点【服务器】
-    private List<Peer> servers = Arrays.asList(new Peer("127.0.0.1", 3000));
+    // 默认本地3000端口
+    private List<Peer> rpcServers = Arrays.asList(new Peer("127.0.0.1", 3000));
 }

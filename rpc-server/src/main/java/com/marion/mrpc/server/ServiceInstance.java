@@ -7,9 +7,10 @@ import lombok.NoArgsConstructor;
 import java.lang.reflect.Method;
 
 /**
+ * 对外提供的服务实例
  * 表示一个具体的服务实例。强调【实例】
- *      1. 由哪个对象Object提供的
- *      2. 具体暴露哪个方法Method作为服务
+ *      1. 由哪个对象target提供的
+ *      2. 具体暴露哪个方法method作为服务
  */
 @Data
 @NoArgsConstructor

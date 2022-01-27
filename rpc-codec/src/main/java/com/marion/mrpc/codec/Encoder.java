@@ -4,7 +4,7 @@ import java.util.IllegalFormatException;
 
 /**
  * 序列化接口
- * 定义encode方法：将任何对象转成Byte[]数组
+ * 定义encode方法：将传入的任何对象obj转成二进制byte[]数组
  */
 public interface Encoder {
 

@@ -30,16 +30,17 @@ public class RpcServer {
     private ServiceInvoker serviceInvoker;      // 服务调用模块
 
 
-
-        public RpcServer() {
+    // 无参构造方法
+    public RpcServer() {
         this(new RpcServerConfig());
     }
 
+    // 有参构造方法, 加载配置类
     public RpcServer(RpcServerConfig config) {
         // 配置
         this.config = config;
         // 网络通信模块 通过反射工具类ReflectUtils 并初始化
-        this.transportServer = ReflectUtils.newInstance(config.getTransport());
+        this.transportServer = ReflectUtils.newInstance(config.getTransportServer());
         this.transportServer.init(config.getPort(), this.handler);
         // 序列化模块 通过反射工具类ReflectUtils
         this.encoder = ReflectUtils.newInstance(config.getEncoder());
@@ -71,35 +72,53 @@ public class RpcServer {
 
         Response response = new Response();
 
+        /**
+         * 1. 从IO通道中读所有可用的二进制数据, 即获取收到的请求
+         * 2. 反序列化得到约定协议格式的请求request
+         * 3. 对ServiceManager传入request, 找到对外提供的具体服务实例ServiceInstance
+         * 4. ServiceInstance的invoke方法, 通过反射工具类ReflectUtils调用对应的具体方法, 得到结果invokeResult【Object类-所有可能的数据】
+         * 5. 将结果invokeResult写入约定格式的响应response中去, 【还不是二进制数据】最终需要序列化发送回去
+         *      catch: 日志输出异常 并处理
+         *      finally:
+         *      6. 将【响应请求并处理返回的】response序列化成二进制数据
+         *      7. 往响应返回流中写入二进制数据
+         * @param receiveRequest 收到的请求
+         * @param toResponse 返回的响应
+         */
+
+
+
+
         @Override
-        public void onRequest(InputStream receive, OutputStream toResponse) {
+        public void onRequest(InputStream receiveRequest, OutputStream toResponse) {
             try {
-                // 1. 读所有可用的二进制数据
-                byte[] bytes = IOUtils.readFully(receive, receive.available());
-                // 2. 反序列化得到request类的对象
-                Request request = decoder.decode(bytes, Request.class);
+                // 1. 从IO通道中读所有可用的二进制数据, 即获取收到的请求
+                byte[] bytesReceiveRequest = IOUtils.readFully(receiveRequest, receiveRequest.available());
+                // 2. 反序列化得到约定协议格式的请求request
+                Request request = decoder.decode(bytesReceiveRequest, Request.class);
                 log.info("get request, {}", request);
-                // 3. 通过request类的对象, 还原具体的服务请求, 找到服务ServiceInstance
+                // 3. 对ServiceManager传入request, 找到对外提供的具体服务实例ServiceInstance
                 ServiceInstance serviceInstance = serviceManager.lookup(request);
                 log.info("get service, {}", serviceInstance);
-                // 4. 通过ServiceInstance可以来调用具体的方法, 得到结果invoke【Object类-代表所有可能的数据】
-                Object invoke = serviceInvoker.invoke(serviceInstance, request);
-                // 5. 将结果invoke写入响应response中去, 并发送回去【还不是二进制数据】
-                response.setData(invoke);
+                // 4. ServiceInstance的invoke方法, 通过反射工具类ReflectUtils调用对应的具体方法, 得到结果invokeResult【Object类-所有可能的数据】
+                Object invokeResult = serviceInvoker.invoke(serviceInstance, request);
+                // 5. 将结果invokeResult写入约定格式的响应response中去, 【还不是二进制数据】最终需要序列化发送回去
+                response.setData(invokeResult);
 
             } catch (Exception e) {
-                // 日志输出异常
+                // catch: 日志输出异常 并处理
                 log.warn(e.getMessage(), e);
                 // 响应中发返回 1-失败码 并返回对应的错误信息
                 response.setCode(1);
                 response.setMessage("RpcServer get error: " + e.getClass().getName());
             } finally {
-                // 6. 【响应返回的】二进制数组
+                // finally:
+                // 二进制数组
                 byte[] byteResponse = new byte[0];
                 try {
-                    // 7. 将response序列化成二进制数据
+                    // 6. 将【响应请求并处理返回的】response序列化成二进制数据
                     byteResponse = encoder.encode(response);
-                    // 8. 往响应返回流中写入二进制数据
+                    // 7. 往响应返回流中写入二进制数据
                     toResponse.write(byteResponse);
                     log.info("RpcServer response");
                 } catch (Exception e) {

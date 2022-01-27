@@ -10,6 +10,7 @@ import java.util.Objects;
 
 /**
  * 描述服务：服务即一个对外的方法
+ * 作用：服务描述完整代表一个服务
  */
 @Data
 @NoArgsConstructor

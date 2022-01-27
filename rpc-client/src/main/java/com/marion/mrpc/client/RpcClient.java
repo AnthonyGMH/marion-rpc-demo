@@ -3,8 +3,6 @@ package com.marion.mrpc.client;
 import com.marion.common.utils.ReflectUtils;
 import com.marion.mrpc.codec.Decoder;
 import com.marion.mrpc.codec.Encoder;
-import com.marion.mrpc.codec.JSONDecoder;
-import com.marion.mrpc.codec.JSONEncoder;
 
 import java.lang.reflect.Proxy;
 
@@ -30,23 +28,25 @@ public class RpcClient {
         this.selector = ReflectUtils.newInstance(this.config.getTransportSelector());
 
         this.selector.init(
-            this.config.getServers(),
+            this.config.getRpcServers(),
             this.config.getConnectCount(),
             this.config.getTransportClass()
         );
     }
 
+
     /**
-     * 获取接口的代理对象 需要new定义一个RemoteInvoke
-     * @param clazz 需要代理的类
+     * 获取接口的代理对象 需要new定义一个RemoteInvoke对象传入
+     * RemoteInvoker: 调用远程服务的前提, 自定义动态代理类的处理.
+     * @param interfaceClass 需要代理的接口类
      * @param <T> 泛型
-     * @return 代理对象T
+     * @return 返回代理对象T
      */
-    public <T> T getProxy(Class<T> clazz) {
+    public <T> T getProxy(Class<T> interfaceClass) {
         return (T) Proxy.newProxyInstance(
             getClass().getClassLoader(),
-            new Class[]{clazz},
-            new RemoteInvoker(clazz, encoder, decoder, selector)
+            new Class[]{interfaceClass},
+            new RemoteInvoker(interfaceClass, encoder, decoder, selector)
         );
     }
 }

@@ -11,14 +11,14 @@ import lombok.Data;
 
 /**
  * RPC Server的配置
- *      1. 负责连接的网络通信模块
- *      2. 编码解码的序列化模块
- *      3. 端口：启动之后监听什么端口
+ *      1. transportServer: 负责连接的网络通信模块
+ *      2. encoder & decoder: 编码解码的序列化模块
+ *      3. port端口：RPC Server启动之后监听什么端口
  */
 @Data
 public class RpcServerConfig {
 
-    private Class<? extends TransportServer> transport = HttpTransportServer.class;
+    private Class<? extends TransportServer> transportServer = HttpTransportServer.class;
 
     private Class<? extends Encoder> encoder = JSONEncoder.class;
 

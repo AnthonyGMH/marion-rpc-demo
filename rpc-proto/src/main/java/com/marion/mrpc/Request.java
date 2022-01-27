@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * RPC框架中请求与响应之间规定的协议。
  * 客户端请求ServiceDescriptor，parameters
+ * 作用：作为在RPC中[客户端发出&服务端收到]的处理请求
  */
 @Data
 @NoArgsConstructor

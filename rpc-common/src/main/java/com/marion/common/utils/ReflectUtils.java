@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * 反射工具类
+ * 作用: 提供RPC中所需的公用方法
  * @method newInstance 根据clazz创建对象
  * @method getPublicMethods 获取clazz类所有public方法
  * @method invoke 调用指定对象的指定方法，返回调用结果
@@ -15,7 +16,7 @@ import java.util.List;
 public class ReflectUtils {
 
     /**
-     * 根据clazz创建对象
+     * 根据clazz创建对象, 返回该对象T
      *
      * @param clazz 待创建对象的类
      * @param <T>   对象类型
@@ -31,7 +32,7 @@ public class ReflectUtils {
     }
 
     /**
-     * 获取clazz类所有public方法
+     * 获取clazz类的所有public方法, 返回列表Method[]
      *
      * @param clazz 待查找的类
      * @return 返回该类所有public方法
@@ -50,7 +51,7 @@ public class ReflectUtils {
     }
 
     /**
-     * 调用指定对象的指定方法，返回调用结果Object
+     * 调用指定对象obj的指定方法method, 传入指定参数args, 返回调用结果Object
      * @param obj 指定对象
      * @param method 指定方法
      * @param args 传入的可变参数
